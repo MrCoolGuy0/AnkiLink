@@ -1,0 +1,215 @@
+/* AnkiMessage. Native controls and conversation actions stay functional. */
+body.ankimessage {
+  --bg: #fff;
+  --panel: #fff;
+  --panel2: #e9e9eb;
+  --ink: #242428;
+  --muted: #66666e;
+  --border: #dedee2;
+  --accent: #0969d8;
+  --soft: #e4effd;
+  --mine: #d9eee1;
+  --button-ink: #fff;
+  --button-hover: #075ab9;
+  --button-pressed: #064b9b;
+  --button-accent: #095dbc;
+  --button-muted: #55555f;
+  --button-soft-pressed: #d6e5f8;
+  --message-sidebar: #f5f5f6;
+  --message-header: #f7f7f8;
+  --message-outgoing: #087d3e;
+  --message-outgoing-ink: #fff;
+  --message-selection: #0969d8;
+  --message-selection-ink: #fff;
+  --shadow: 0 10px 34px #1515232b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "DejaVu Sans", sans-serif;
+}
+body.ankimessage.dark {
+  --bg: #18181a;
+  --panel: #1e1e20;
+  --panel2: #343437;
+  --ink: #f0f0f3;
+  --muted: #b5b5be;
+  --border: #414146;
+  --accent: #8dbfff;
+  --soft: #273d59;
+  --mine: #244534;
+  --button-ink: #172d47;
+  --button-hover: #b0d3ff;
+  --button-pressed: #78a9e8;
+  --button-accent: #a3ccff;
+  --button-muted: #c5c5cd;
+  --button-soft-pressed: #365579;
+  --message-sidebar: #252527;
+  --message-header: #252527;
+  --message-outgoing: #087d3e;
+  --message-selection: #2169c5;
+  --shadow: 0 10px 34px #0007;
+}
+body.ankimessage .layout {grid-template-columns: 252px minmax(0, 1fr)}
+body.ankimessage .sidebar {padding: 12px 10px 8px; background: var(--message-sidebar)}
+body.ankimessage .brand {padding: 2px 6px 12px; gap: 8px}
+body.ankimessage .brand .mark {width: 25px; height: 25px; border-radius: 7px; font-size: 17px}
+body.ankimessage .brand .mark span {font-size: 9px; margin-top: 4px}
+body.ankimessage .wordmark {font-size: 16px; letter-spacing: -.3px}
+body.ankimessage .tabs {margin: 0 4px 10px; padding: 3px; border-radius: 8px}
+body.ankimessage .tabs button {border-radius: 6px; padding: 5px 2px}
+body.ankimessage .message-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  margin: 0 4px 8px;
+  padding: 0 9px;
+  border-radius: 15px;
+  background: var(--panel2);
+  color: var(--muted);
+}
+body.ankimessage .message-search .retro-icon {display: block; width: 14px; height: 14px}
+body.ankimessage .message-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+}
+body.ankimessage .message-search input::placeholder {color: var(--muted); opacity: 1}
+body.ankimessage .search-empty:not([hidden]) {display: block}
+body.ankimessage .nav-head {padding: 0 5px 5px}
+body.ankimessage .nav-head .icon {width: 28px; height: 28px; border-radius: 50%}
+body.ankimessage .avatar {border-radius: 50%}
+body.ankimessage .thread, body.ankimessage .friend {padding: 9px 8px; border-radius: 9px; gap: 8px}
+body.ankimessage .thread[hidden] {display: none}
+body.ankimessage .thread .avatar {width: 36px; height: 36px}
+body.ankimessage .thread .thread-copy small {margin-top: 0}
+body.ankimessage .conversation-time {
+  display: block;
+  align-self: flex-start;
+  margin-top: 2px;
+  font-size: 9px;
+  white-space: nowrap;
+  color: var(--muted);
+}
+body.ankimessage #link-app button.thread.active {
+  --control-bg: var(--message-selection);
+  --control-hover: var(--message-selection);
+  --control-pressed: var(--message-selection);
+  --control-ink: var(--message-selection-ink);
+  --control-hover-ink: var(--message-selection-ink);
+}
+body.ankimessage .thread.active small, body.ankimessage .thread.active .conversation-time {color: #f2f7ff}
+body.ankimessage .thread.active .avatar {background: var(--panel2); color: var(--ink)}
+body.ankimessage .thread.active .badge {background: #fff; color: #0757b4}
+body.ankimessage .self {padding: 8px 5px 0; margin-top: 7px}
+body.ankimessage .self .avatar {border-radius: 50%}
+body.ankimessage .chat-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  height: 76px;
+  gap: 5px;
+  padding: 5px 12px;
+  background: var(--message-header);
+}
+body.ankimessage .chat-head > :is(.chat-identity, .group-summary) {
+  grid-column: 2;
+  justify-self: center;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 100%;
+  text-align: center;
+}
+body.ankimessage .chat-head > :is(.chat-identity, .group-summary) > :last-child {max-width: 100%}
+body.ankimessage .chat-head .avatar {display: flex; width: 31px; height: 31px; border-radius: 50%; font-size: 11px}
+body.ankimessage .chat-head h2, body.ankimessage .chat-head .chat-title {font-size: 13px; line-height: 1.3}
+body.ankimessage .chat-head .tiny {margin: 0 auto; font-size: 10px; line-height: 1.2}
+body.ankimessage .chat-head .chat-actions {grid-column: 3; justify-self: end}
+body.ankimessage .chat-actions .btn {padding: 7px 10px; font-size: 11px; border-radius: 16px}
+body.ankimessage .chat-actions .icon {width: 31px; height: 31px; border-radius: 50%}
+body.ankimessage .messages {padding: 14px 22px 8px; scrollbar-color: var(--border) transparent}
+body.ankimessage .message {margin-bottom: 9px}
+body.ankimessage .direct-chat .message > .avatar {display: none}
+body.ankimessage .bubble {box-shadow: none}
+body.ankimessage .text-bubble {
+  position: relative;
+  padding: 7px 12px;
+  background: var(--panel2);
+  border-radius: 16px 16px 16px 6px;
+}
+body.ankimessage .text-bubble::after {
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 11px;
+  height: 8px;
+  background-color: inherit;
+  clip-path: path("M0 0H7C7 3.5 8 6 10.5 7.05C11 7.25 10.9 7.6 10.4 7.7C8.4 8 4 8 0 8Z");
+  transform: scaleX(-1);
+  pointer-events: none;
+  content: "";
+}
+body.ankimessage .mine .text-bubble {
+  background: var(--message-outgoing);
+  color: var(--message-outgoing-ink);
+  border-radius: 16px 16px 6px 16px;
+}
+body.ankimessage .mine .text-bubble::after {
+  left: auto;
+  right: -4px;
+  transform: none;
+}
+body.ankimessage .has-chat-color .mine .text-bubble {background: var(--mine); color: var(--ink)}
+body.ankimessage .deck-bubble {border: 1px solid var(--border); border-radius: 13px}
+body.ankimessage .message-meta {margin-top: 3px}
+body.ankimessage .composer-wrap {padding: 2px 12px 9px}
+body.ankimessage .composer {
+  gap: 6px;
+  align-items: center;
+  padding: 3px 5px;
+  background: var(--message-header);
+  border-radius: 20px;
+  box-shadow: none;
+}
+body.ankimessage .composer .icon {margin: 0; width: 30px; height: 30px; border-radius: 50%}
+body.ankimessage .composer textarea {min-height: 32px; padding: 5px 4px; font-size: 13px}
+body.ankimessage .composer textarea::placeholder {color: var(--muted); opacity: 1}
+body.ankimessage .modal {border: 1px solid var(--border); border-radius: 14px}
+body.ankimessage .modal-head {background: var(--message-header)}
+body.ankimessage .group-members {grid-template-columns: minmax(0, 1fr)}
+body.ankimessage .group-member {min-width: 0}
+
+@media (max-width: 900px) {
+  body.ankimessage .layout {grid-template-columns: 218px minmax(0, 1fr)}
+}
+@media (max-width: 700px) {
+  body.ankimessage .layout {grid-template-columns: minmax(0, 1fr)}
+  body.ankimessage .sidebar {padding: 9px 8px}
+  body.ankimessage .layout.inbox-open > .sidebar .tabs {margin: 0}
+  body.ankimessage .chat-head {
+    --chat-action-size: 32px;
+    --chat-action-gap: 4px;
+    --chat-actions-width: calc(2 * var(--chat-action-size) + var(--chat-action-gap));
+    /* Equal side columns keep the contact centered between uneven controls. */
+    grid-template-columns: var(--chat-actions-width) minmax(0, 1fr) var(--chat-actions-width);
+    gap: 4px;
+    height: 69px;
+    padding: 4px 7px;
+  }
+  body.ankimessage .chat-head .chat-back {grid-column: 1}
+  body.ankimessage .chat-head h2 {max-width: none}
+  body.ankimessage .chat-head .chat-actions {gap: var(--chat-action-gap)}
+  body.ankimessage .chat-actions > button {
+    width: var(--chat-action-size);
+    height: var(--chat-action-size);
+    padding: 0;
+    border-radius: 50%;
+  }
+  body.ankimessage .chat-actions .btn {display: inline-flex; align-items: center; justify-content: center}
+  body.ankimessage .chat-actions .chat-share-label {display: none}
+  body.ankimessage .chat-actions .retro-icon {display: block; width: 20px; height: 20px}
+  body.ankimessage .chat-actions .retro-icon path {fill: none}
+  body.ankimessage .messages {padding: 12px 13px 8px}
+  body.ankimessage .composer-wrap {padding: 0 7px 7px}
+  body.ankimessage .composer {gap: 3px; padding: 3px}
+  body.ankimessage .composer .icon {width: 27px; height: 29px}
+}

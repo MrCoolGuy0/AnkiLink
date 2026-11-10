@@ -1,0 +1,140 @@
+/* AnkiLink owns its control states; Anki's toolbar theme must not repaint them. */
+#modal-root .chat-color-swatches button {
+  --control-bg: var(--swatch);
+  --control-hover: var(--swatch);
+  --control-pressed: var(--swatch);
+  --control-ink: #fff;
+  --control-hover-ink: #fff;
+  --control-shadow: inset 0 0 0 2px var(--panel);
+}
+#modal-root .chat-color-swatches [data-chat-color="default"] {
+  --control-ink: var(--message-outgoing-ink, var(--ink));
+  --control-hover-ink: var(--control-ink);
+}
+body {
+  color-scheme: light;
+  --button-ink: #fff;
+  --button-hover: #5b46c7;
+  --button-pressed: #503ab8;
+  --button-muted: #676d83;
+  --button-accent: #5742bd;
+  --button-soft-pressed: #e1dafb;
+  --button-danger-bg: #fcebf0;
+  --button-danger-ink: #a9314d;
+  --button-danger-hover: #f8dce5;
+  --button-danger-pressed: #f2cbd8;
+}
+body.dark {
+  color-scheme: dark;
+  --button-ink: #201a38;
+  --button-hover: #c2b5ff;
+  --button-pressed: #a391fa;
+  --button-muted: #abb2c9;
+  --button-accent: #c2b5ff;
+  --button-soft-pressed: #453b61;
+  --button-danger-bg: #4b2938;
+  --button-danger-ink: #ffb4c5;
+  --button-danger-hover: #603246;
+  --button-danger-pressed: #713d50;
+}
+:is(#link-app, #modal-root) button {
+  --control-bg: transparent;
+  --control-ink: var(--ink);
+  --control-hover: var(--soft);
+  --control-hover-ink: var(--button-accent);
+  --control-pressed: var(--button-soft-pressed);
+  --control-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--control-bg) !important;
+  background-image: none !important;
+  color: var(--control-ink) !important;
+  border: 0 !important;
+  box-shadow: var(--control-shadow) !important;
+  transform: none !important;
+  translate: none !important;
+  scale: none !important;
+  animation: none !important;
+  transition: background-color .12s, color .12s;
+}
+:is(#link-app, #modal-root) button:enabled:hover {
+  background-color: var(--control-hover) !important;
+  color: var(--control-hover-ink) !important;
+}
+:is(#link-app, #modal-root) button:enabled:active {
+  background-color: var(--control-pressed) !important;
+  color: var(--control-hover-ink) !important;
+}
+:is(#link-app, #modal-root) button:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 3px;
+}
+:is(#link-app, #modal-root) button:disabled {
+  background-color: var(--control-bg) !important;
+  color: var(--control-ink) !important;
+  cursor: default;
+  opacity: .5;
+}
+:is(#link-app, #modal-root) button.btn,
+:is(#link-app, #modal-root) button.send-btn {
+  --control-bg: var(--accent);
+  --control-ink: var(--button-ink);
+  --control-hover: var(--button-hover);
+  --control-hover-ink: var(--button-ink);
+  --control-pressed: var(--button-pressed);
+}
+:is(#link-app, #modal-root) button.secondary {
+  --control-bg: var(--panel2);
+  --control-ink: var(--ink);
+  --control-hover: var(--soft);
+  --control-hover-ink: var(--button-accent);
+  --control-pressed: var(--button-soft-pressed);
+}
+:is(#link-app, #modal-root) button.ghost {
+  --control-bg: transparent;
+  --control-ink: var(--button-muted);
+  --control-hover: var(--soft);
+  --control-hover-ink: var(--button-accent);
+  --control-pressed: var(--button-soft-pressed);
+}
+:is(#link-app, #modal-root) button.danger {
+  --control-bg: var(--button-danger-bg);
+  --control-ink: var(--button-danger-ink);
+  --control-hover: var(--button-danger-hover);
+  --control-hover-ink: var(--button-danger-ink);
+  --control-pressed: var(--button-danger-pressed);
+}
+:is(#link-app, #modal-root) button.icon:not(.send-btn):not(.photo-close) {
+  --control-ink: var(--button-muted);
+  --control-hover: var(--panel2);
+}
+:is(#link-app, #modal-root) button.link-btn {
+  --control-ink: var(--button-accent);
+}
+#link-app .tabs button {
+  --control-ink: var(--button-muted);
+}
+#link-app .tabs button.active {
+  --control-bg: var(--panel);
+  --control-ink: var(--ink);
+  --control-shadow: 0 2px 4px #00000008;
+}
+#link-app button.thread {
+  --control-hover: var(--panel2);
+  --control-hover-ink: var(--ink);
+}
+#link-app button.thread.active {
+  --control-bg: var(--soft);
+  --control-hover: var(--soft);
+}
+#link-app .sticker-grid button {
+  --control-bg: var(--panel2);
+}
+#modal-root button.photo-close {
+  --control-bg: #ffffff22;
+  --control-ink: #fff;
+  --control-hover: #ffffff38;
+  --control-hover-ink: #fff;
+  --control-pressed: #ffffff4a;
+}
+#link-app button.group-summary{--control-hover:transparent;--control-pressed:transparent;--control-hover-ink:var(--ink)}

@@ -1,0 +1,27 @@
+services:
+  relay:
+    build: .
+    restart: unless-stopped
+    environment:
+      ANKI_LINK_JOIN_CODE: ${ANKI_LINK_JOIN_CODE:?Set a private registration code}
+      ANKI_LINK_MAX_USERS: 100
+      ANKI_LINK_MAX_FILE_MB: 250
+    volumes:
+      - relay_data:/data
+  https:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      ANKI_LINK_DOMAIN: ${ANKI_LINK_DOMAIN:?Set your public domain}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  relay_data:
+  caddy_data:
+  caddy_config:

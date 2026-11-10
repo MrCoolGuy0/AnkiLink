@@ -1,0 +1,6 @@
+{$ANKI_LINK_DOMAIN} {
+    request_body {
+        max_size 250MB
+    }
+    reverse_proxy relay:8766
+}

@@ -1,0 +1,204 @@
+/* AnkiRise uses a quiet grid and the look of small desktop windows. */
+body.ankirise {
+  --bg: #c8dfe9;
+  --panel: #e0eef2;
+  --panel2: #d4e6eb;
+  --ink: #142e36;
+  --muted: #435f68;
+  --border: #90adb6;
+  --accent: #2c616c;
+  --soft: #bad7df;
+  --mine: #cbe5e9;
+  --button-ink: #f4fcff;
+  --button-hover: #24545e;
+  --button-pressed: #1b4750;
+  --button-accent: #265963;
+  --button-muted: #395b64;
+  --button-soft-pressed: #a8cbd4;
+  --rise-edge: #365f67;
+  --rise-bar: #72969e;
+  --rise-grid: #f0faff66;
+  --shadow: 0 6px 20px #1b424632;
+  font-family: "Segoe UI", "DejaVu Sans", sans-serif;
+}
+body.ankirise.dark {
+  --bg: #1a313b;
+  --panel: #213b43;
+  --panel2: #2a464f;
+  --ink: #e2f2f5;
+  --muted: #abc4ca;
+  --border: #4b6d77;
+  --accent: #9ad0d9;
+  --soft: #30545e;
+  --mine: #2e4c57;
+  --button-ink: #153239;
+  --button-hover: #b3e0e5;
+  --button-pressed: #8abdc7;
+  --button-accent: #b7e0e7;
+  --button-muted: #c0dce1;
+  --button-soft-pressed: #3f616b;
+  --rise-edge: #658e98;
+  --rise-bar: #416770;
+  --rise-grid: #9dd5e013;
+  --shadow: 0 6px 20px #08191f77;
+}
+body.ankirise .retro-frame {
+  background-color: var(--bg);
+  background-image: linear-gradient(to right, var(--rise-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rise-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+body.ankirise .layout {
+  grid-template-columns: 250px minmax(0, 1fr);
+  padding: 7px;
+  gap: 8px;
+}
+body.ankirise .sidebar {
+  padding: 13px 10px 8px;
+  border: 2px solid var(--rise-edge);
+  border-radius: 13px;
+}
+body.ankirise .brand {padding: 0 5px 12px}
+body.ankirise .mark {
+  color: var(--button-ink);
+  border: 1px solid var(--rise-edge);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 #f4ffff4d;
+}
+body.ankirise .tabs {
+  margin: 0 0 12px;
+  padding: 2px;
+  border: 1px solid var(--rise-edge);
+  border-radius: 9px;
+}
+body.ankirise #link-app .tabs button.active {
+  --control-bg: var(--accent);
+  --control-ink: var(--button-ink);
+  --control-hover: var(--button-hover);
+  --control-hover-ink: var(--button-ink);
+}
+body.ankirise #link-app button.thread {margin-bottom: 4px}
+body.ankirise #link-app button.thread.active {
+  --control-shadow: inset 0 0 0 1px var(--rise-edge);
+}
+body.ankirise .avatar {border: 1px solid var(--border); border-radius: 10px}
+body.ankirise .self {
+  padding: 8px 6px 2px;
+  border-color: var(--rise-edge);
+}
+body.ankirise .workspace {background: transparent}
+body.ankirise .chat-workspace {
+  border: 2px solid var(--rise-edge);
+  border-radius: 12px;
+  overflow: hidden;
+}
+body.ankirise .chat-head {
+  height: 72px;
+  padding: 8px 13px;
+  border: 0;
+  border-top: 8px solid var(--rise-bar);
+  border-bottom: 1px solid var(--rise-edge);
+}
+body.ankirise .messages {
+  padding: 18px 20px 10px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rise-bar) var(--panel2);
+}
+body.ankirise .messages::-webkit-scrollbar {width: 10px}
+body.ankirise .messages::-webkit-scrollbar-track {background: var(--panel2)}
+body.ankirise .messages::-webkit-scrollbar-thumb {
+  background: var(--rise-bar);
+  border: 2px solid var(--panel2);
+  border-radius: 8px;
+}
+body.ankirise .bubble {
+  border: 1px solid var(--border);
+  border-radius: 12px 12px 12px 4px;
+}
+body.ankirise .mine .bubble {border-radius: 12px 12px 4px 12px}
+body.ankirise .bubble.sticker-bubble {border: 0}
+body.ankirise .bubble.deck-bubble {
+  width: 286px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 13px 15px;
+  border: 2px solid var(--rise-edge);
+  border-top: 9px solid var(--rise-bar);
+  border-radius: 12px;
+  box-shadow: none;
+}
+body.ankirise .deck-symbol {
+  width: 33px;
+  height: 34px;
+  margin: 0 0 8px;
+  border-color: var(--rise-edge);
+  background: var(--panel2);
+  box-shadow: none;
+}
+body.ankirise .deck-bubble p {margin: 3px 0 7px}
+body.ankirise .deck-bubble .status,
+body.ankirise .message-system span {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--rise-edge);
+  border-radius: 10px;
+  background: var(--panel2);
+  color: var(--ink);
+}
+body.ankirise #link-app button.reaction-chip,
+body.ankirise #link-app button.reaction-add {
+  --control-bg: var(--panel);
+  --control-shadow: inset 0 0 0 1px var(--rise-edge);
+}
+body.ankirise #link-app button.reaction-chip.is-mine {--control-bg: var(--soft)}
+body.ankirise .composer-wrap {padding: 2px 8px 8px}
+body.ankirise .composer {
+  gap: 6px;
+  padding: 6px 8px;
+  border: 2px solid var(--rise-edge);
+  border-radius: 13px;
+  box-shadow: none;
+}
+body.ankirise .composer textarea::placeholder {color: var(--muted); opacity: 1}
+body.ankirise #link-app .chat-actions .btn,
+body.ankirise #link-app .composer .send-btn,
+body.ankirise #link-app .nav-head .icon {
+  --control-shadow: inset 0 0 0 1px var(--rise-edge);
+}
+body.ankirise .modal {
+  border: 2px solid var(--rise-edge);
+  border-radius: 12px;
+}
+body.ankirise .modal-head {
+  border-top: 7px solid var(--rise-bar);
+  background: var(--panel2);
+}
+body.ankirise .picker,
+body.ankirise .reaction-picker,
+body.ankirise .member-menu {
+  border-color: var(--rise-edge);
+  border-radius: 10px;
+}
+body.ankirise .chat-workspace .picker {
+  left: 8px;
+  max-height: min(330px, calc(100vh - 110px));
+}
+body.ankirise .group-members {grid-template-columns: minmax(0, 1fr)}
+body.ankirise .group-member {min-width: 0}
+
+@media (max-width: 900px) {
+  body.ankirise .layout {grid-template-columns: 221px minmax(0, 1fr)}
+}
+@media (max-width: 700px) {
+  body.ankirise .layout {grid-template-columns: minmax(0, 1fr); padding: 4px; gap: 4px}
+  body.ankirise .sidebar {padding: 8px}
+  body.ankirise .layout.inbox-open > .sidebar {padding: 4px}
+  body.ankirise .chat-head {height: 64px; padding: 6px 8px; gap: 5px}
+  body.ankirise .chat-actions .icon {width: 30px; height: 30px}
+  body.ankirise .messages {padding: 12px 10px 8px}
+  body.ankirise .composer-wrap {padding: 2px 4px 4px}
+  body.ankirise .composer {gap: 3px; padding: 5px}
+  body.ankirise .bubble.deck-bubble {width: auto; padding: 10px}
+  body.ankirise .chat-workspace .picker {left: 4px; width: min(305px, calc(100vw - 22px))}
+}

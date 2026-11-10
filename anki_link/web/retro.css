@@ -1,0 +1,481 @@
+/* AnkiRetro uses a compact messenger layout with raised controls. */
+body.ankiretro {
+  --bg: #f9f7f2;
+  --panel: #fffdf9;
+  --panel2: #e6e1ef;
+  --ink: #252337;
+  --muted: #625771;
+  --border: #c6b8cc;
+  --accent: #254d8b;
+  --soft: #dce7f7;
+  --mine: #efd6e3;
+  --button-hover: #1e427b;
+  --button-pressed: #193568;
+  --button-muted: #514760;
+  --button-accent: #254d8b;
+  --button-soft-pressed: #cec8dd;
+  --retro-chrome: #efd5e2;
+  --retro-edge: #88768f;
+  --retro-highlight: #fffcff;
+  --retro-shade: #ae9ab4;
+  --retro-title: #244697;
+  --retro-incoming: #d8e5f4;
+  --retro-incoming-edge: #798fae;
+  --retro-outgoing-edge: #a67b91;
+  --retro-incoming-text: #345b83;
+  --retro-outgoing-text: #814660;
+  --retro-mono: "Lucida Console", Consolas, "DejaVu Sans Mono", monospace;
+  --retro-raised: inset 0 0 0 1px var(--retro-edge), inset 2px 2px var(--retro-highlight), inset -2px -2px var(--retro-shade);
+  --retro-inset: inset 0 0 0 1px var(--retro-edge), inset 2px 2px var(--retro-shade), inset -2px -2px var(--retro-highlight);
+  --shadow: 2px 3px 0 #23192d35;
+  font-family: Tahoma, "Segoe UI", "DejaVu Sans", sans-serif;
+}
+body.ankiretro.dark {
+  --bg: #211f28;
+  --panel: #2a2530;
+  --panel2: #463d52;
+  --ink: #f5ebf1;
+  --muted: #c4b5c8;
+  --border: #68576e;
+  --accent: #b8d1fb;
+  --soft: #344764;
+  --mine: #51374b;
+  --button-hover: #c6dcff;
+  --button-pressed: #a3bfe9;
+  --button-muted: #d0c2d4;
+  --button-accent: #c8dcff;
+  --button-soft-pressed: #4d4058;
+  --retro-chrome: #3c2c3e;
+  --retro-edge: #856e8e;
+  --retro-highlight: #9c829f;
+  --retro-shade: #271e30;
+  --retro-title: #294a8b;
+  --retro-incoming: #31405a;
+  --retro-incoming-edge: #6a82a3;
+  --retro-outgoing-edge: #956d87;
+  --retro-incoming-text: #b4d0f0;
+  --retro-outgoing-text: #e4b4cc;
+}
+
+
+/* Palette variants share the same AnkiRetro component styles. */
+body.ankiretro.ankiretro-baby-blue {
+  --bg: #f7f8fa;
+  --panel: #fcfdff;
+  --panel2: #e0e7f2;
+  --ink: #203950;
+  --muted: #4a6279;
+  --border: #adc4d9;
+  --accent: #2f5e8d;
+  --soft: #c8ddf1;
+  --mine: #c5dff4;
+  --button-hover: #254e79;
+  --button-pressed: #1e4269;
+  --button-muted: #3d5871;
+  --button-accent: #2f5e8d;
+  --button-soft-pressed: #abcce8;
+  --retro-chrome: #c8dff1;
+  --retro-edge: #6e92b4;
+  --retro-highlight: #fbfeff;
+  --retro-shade: #9ebad3;
+  --retro-title: #4574a5;
+  --retro-incoming: #e5e9f4;
+  --retro-incoming-edge: #8b98b6;
+  --retro-outgoing-edge: #7198bf;
+  --retro-incoming-text: #4c5980;
+  --retro-outgoing-text: #2f5274;
+  --shadow: 2px 3px 0 #233b5535;
+}
+body.ankiretro.ankiretro-baby-blue.dark {
+  --bg: #202732;
+  --panel: #27313d;
+  --panel2: #3b4659;
+  --ink: #ebf6ff;
+  --muted: #b7cee1;
+  --border: #536e86;
+  --accent: #b1daff;
+  --soft: #314f6b;
+  --mine: #315371;
+  --button-ink: #152432;
+  --button-hover: #c6e4ff;
+  --button-pressed: #9ec9ef;
+  --button-muted: #c5daeb;
+  --button-accent: #c6e4ff;
+  --button-soft-pressed: #2b4661;
+  --retro-chrome: #293f55;
+  --retro-edge: #6d8fac;
+  --retro-highlight: #799bb7;
+  --retro-shade: #1c2938;
+  --retro-incoming: #303b50;
+  --retro-incoming-edge: #7888a9;
+  --retro-outgoing-edge: #739cbb;
+  --retro-incoming-text: #c4cee7;
+  --retro-outgoing-text: #c1ddf4;
+}
+body.ankiretro.ankiretro-maroon {
+  --bg: #faf8f9;
+  --panel: #fefbfd;
+  --panel2: #e9dee6;
+  --ink: #39232c;
+  --muted: #6e4c57;
+  --border: #c9a6ae;
+  --accent: #741e3d;
+  --soft: #edd6df;
+  --mine: #e8c5d2;
+  --button-hover: #641832;
+  --button-pressed: #541329;
+  --button-muted: #5e3c49;
+  --button-accent: #741e3d;
+  --button-soft-pressed: #deb3bf;
+  --retro-chrome: #dfc1cc;
+  --retro-edge: #925b70;
+  --retro-highlight: #fff6f5;
+  --retro-shade: #b78495;
+  --retro-title: #741e3d;
+  --retro-incoming: #ede7ec;
+  --retro-incoming-edge: #a48fa3;
+  --retro-outgoing-edge: #a6637b;
+  --retro-incoming-text: #624b60;
+  --retro-outgoing-text: #742744;
+  --shadow: 2px 3px 0 #49263535;
+}
+body.ankiretro.ankiretro-maroon.dark {
+  --bg: #241f24;
+  --panel: #30272e;
+  --panel2: #483947;
+  --ink: #fff0f2;
+  --muted: #dfbfc7;
+  --border: #76505d;
+  --accent: #f6b6ca;
+  --soft: #603246;
+  --mine: #5e374b;
+  --button-ink: #321823;
+  --button-hover: #ffd1dd;
+  --button-pressed: #e8a0b7;
+  --button-muted: #e6c3cd;
+  --button-accent: #f8c4d4;
+  --button-soft-pressed: #583244;
+  --retro-chrome: #4e2b3d;
+  --retro-edge: #a36c80;
+  --retro-highlight: #b68293;
+  --retro-shade: #321d26;
+  --retro-incoming: #40343e;
+  --retro-incoming-edge: #8d778b;
+  --retro-outgoing-edge: #b0788c;
+  --retro-incoming-text: #d8c2d5;
+  --retro-outgoing-text: #f5b9cc;
+}
+
+body.ankiretro .retro-frame {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--retro-chrome);
+}
+body.ankiretro .retro-frame > :is(.layout, .auth, .loading) {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+body.ankiretro .layout {
+  grid-template-columns: 234px minmax(0, 1fr);
+  padding: 4px;
+  gap: 4px;
+}
+body.ankiretro :is(.sidebar, .workspace) {
+  border: 1px solid var(--retro-edge);
+  border-radius: 2px;
+}
+body.ankiretro .sidebar {
+  padding: 8px;
+  background: var(--retro-chrome);
+  box-shadow: inset 1px 1px var(--retro-highlight);
+}
+body.ankiretro .brand {padding: 1px 2px 8px; gap: 8px}
+body.ankiretro .mark {
+  border-radius: 3px;
+  background: var(--retro-title);
+  color: #fff;
+  box-shadow: inset 1px 1px #ffffff55, inset -1px -1px #192643a0;
+}
+body.ankiretro .brand .mark {width: 31px; height: 31px; font-size: 21px}
+body.ankiretro .brand .mark span {font-size: 11px; margin-top: 5px}
+body.ankiretro .wordmark {
+  font: 700 17px/1.2 var(--retro-mono);
+  letter-spacing: -.6px;
+}
+body.ankiretro .tabs {
+  margin: 0 0 9px;
+  padding: 0;
+  gap: 3px;
+  background: transparent;
+}
+body.ankiretro #link-app .tabs button {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+  padding: 5px 2px;
+  gap: 2px;
+  border-radius: 2px;
+  --control-ink: var(--ink);
+  --control-bg: var(--panel2);
+  --control-shadow: var(--retro-raised);
+}
+body.ankiretro #link-app .tabs button.active {
+  --control-bg: var(--soft);
+  --control-hover: var(--soft);
+  --control-shadow: var(--retro-inset);
+}
+body.ankiretro .nav-tab-label {max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+body.ankiretro .retro-icon {display: block; width: 18px; height: 18px; flex: none; pointer-events: none}
+body.ankiretro .tabs .retro-icon {color: var(--retro-incoming-text)}
+body.ankiretro .nav-head {padding: 3px 2px 6px}
+body.ankiretro .nav-head strong {font: 700 12px/1.3 var(--retro-mono)}
+body.ankiretro #link-app button.thread,
+body.ankiretro .friend {
+  padding: 6px;
+  margin-bottom: 3px;
+  gap: 7px;
+  border-radius: 2px;
+}
+body.ankiretro #link-app button.thread {
+  --control-bg: var(--panel);
+  --control-shadow: inset 0 0 0 1px var(--border);
+}
+body.ankiretro #link-app button.thread.active {
+  --control-bg: var(--soft);
+  --control-hover: var(--soft);
+  --control-shadow: inset 0 0 0 1px var(--retro-incoming-edge);
+}
+body.ankiretro :is(.sidebar, .chat-head, .message) .avatar {
+  border: 1px solid var(--retro-incoming-edge);
+  border-radius: 2px;
+  background: var(--retro-incoming);
+  color: var(--retro-incoming-text);
+  box-shadow: inset 1px 1px var(--retro-highlight);
+}
+body.ankiretro :is(.sidebar .list, .chat-head) .avatar {width: 32px; height: 32px}
+body.ankiretro .self {
+  margin-top: 5px;
+  padding: 6px 4px 0;
+  border-color: var(--retro-edge);
+}
+body.ankiretro .self > .row {min-width: 0}
+body.ankiretro .self .avatar {width: 28px; height: 28px}
+body.ankiretro .badge {border-radius: 2px; color: var(--button-ink)}
+
+body.ankiretro .chat-head {
+  height: 54px;
+  padding: 7px 10px;
+  gap: 8px;
+  background: var(--retro-chrome);
+  border-bottom: 1px solid var(--retro-edge);
+  box-shadow: inset 0 1px var(--retro-highlight);
+}
+body.ankiretro :is(.chat-title, .chat-head h2) {font: 700 14px/1.35 var(--retro-mono)}
+body.ankiretro .chat-actions {gap: 5px}
+body.ankiretro:is(.ankiretro-baby-blue, .ankiretro-maroon) .chat-actions .retro-icon path:first-child {fill: var(--soft)}
+body.ankiretro .chat-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+body.ankiretro #link-app :is(.chat-actions .btn, .chat-head .icon, .nav-head .icon, .self .icon, .composer .icon),
+body.ankiretro #modal-root .modal-head .icon {
+  --control-bg: var(--panel2);
+  --control-ink: var(--ink);
+  --control-hover: var(--soft);
+  --control-shadow: var(--retro-raised);
+  border-radius: 2px;
+}
+body.ankiretro #link-app :is(.chat-actions, .nav-head, .self) .icon {width: 29px; height: 29px}
+
+body.ankiretro .messages {
+  padding: 12px 20px 8px;
+  background-color: var(--bg);
+  scrollbar-gutter: stable;
+}
+body.ankiretro :is(.messages, .sidebar .list)::-webkit-scrollbar {width: 12px; height: 12px}
+body.ankiretro :is(.messages, .sidebar .list)::-webkit-scrollbar-track {
+  background: var(--panel2);
+  box-shadow: inset 1px 0 var(--border);
+}
+body.ankiretro :is(.messages, .sidebar .list)::-webkit-scrollbar-thumb {
+  background: var(--panel2);
+  box-shadow: var(--retro-raised);
+}
+body.ankiretro .message {
+  --retro-fill: var(--retro-incoming);
+  --retro-bubble-edge: var(--retro-incoming-edge);
+  --retro-time: var(--retro-incoming-text);
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+body.ankiretro .message.mine {
+  --retro-fill: var(--mine);
+  --retro-bubble-edge: var(--retro-outgoing-edge);
+  --retro-time: var(--retro-outgoing-text);
+}
+body.ankiretro .message .avatar {margin: 0}
+body.ankiretro .message-meta {
+  gap: 6px;
+  margin-top: 3px;
+  font: 11px/1.35 var(--retro-mono);
+  color: var(--retro-time);
+}
+body.ankiretro .message-meta time {white-space: nowrap}
+body.ankiretro .message-meta > span:first-child:not(.delivery-status) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+body.ankiretro .bubble:not(.sticker-bubble) {
+  padding: 5px 9px;
+  border: 1px solid var(--retro-bubble-edge);
+  border-radius: 5px;
+  background: var(--retro-fill);
+  box-shadow: inset 0 1px var(--retro-highlight);
+}
+body.ankiretro .text-bubble {
+  position: relative;
+  font: 13px/1.45 var(--retro-mono);
+}
+body.ankiretro .text-bubble::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -4px;
+  width: 6px;
+  height: 6px;
+  border-left: 1px solid var(--retro-bubble-edge);
+  border-bottom: 1px solid var(--retro-bubble-edge);
+  background: inherit;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+body.ankiretro .mine .text-bubble::before {left: auto; right: -4px; transform: rotate(225deg)}
+body.ankiretro .message-photo {border-radius: 2px}
+body.ankiretro .message .deck-bubble {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 11px;
+  min-width: 0;
+  padding: 10px 12px;
+}
+body.ankiretro .deck-symbol {
+  width: 20px;
+  height: 24px;
+  margin: 4px 0 0;
+  border: 1px solid var(--retro-bubble-edge);
+  border-radius: 2px;
+  background: var(--panel);
+  box-shadow: 3px -3px 0 -1px var(--panel2), 3px -3px var(--retro-bubble-edge);
+}
+body.ankiretro .deck-card-copy {min-width: 0}
+body.ankiretro .deck-bubble p {margin: 3px 0 6px}
+body.ankiretro .deck-bubble .status {color: var(--retro-time)}
+body.ankiretro .deck-bubble .btn {padding: 6px 8px; font-size: 11px}
+body.ankiretro .message-system {margin: 8px 0 12px}
+body.ankiretro .message-system span {
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--panel);
+}
+body.ankiretro #link-app button.reaction-chip {border-radius: 4px}
+
+body.ankiretro .composer-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border-top: 1px solid var(--retro-edge);
+  background: var(--retro-chrome);
+  box-shadow: inset 0 1px var(--retro-highlight);
+}
+body.ankiretro .typing-indicator {order: 1; height: 16px; padding: 2px 3px 0}
+body.ankiretro .upload-state {order: 2}
+body.ankiretro .composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(3, 28px);
+  grid-template-rows: 27px minmax(27px, 1fr);
+  gap: 3px;
+  padding: 0;
+  align-items: start;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.ankiretro .composer textarea {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: stretch;
+  width: 100%;
+  min-height: 57px;
+  padding: 6px 7px;
+  border: 1px solid var(--retro-edge);
+  border-radius: 2px;
+  background: var(--panel);
+  box-shadow: inset 1px 1px var(--retro-shade);
+  font: 13px/1.45 var(--retro-mono);
+}
+body.ankiretro .composer textarea::placeholder {color: var(--muted); opacity: 1}
+body.ankiretro .composer .icon:not(.send-btn) {
+  grid-row: 2;
+  width: 28px;
+  height: 27px;
+  margin: 0;
+}
+body.ankiretro .composer .compose-icon {width: 17px; height: 17px}
+body.ankiretro #link-app .composer .send-btn {
+  grid-column: 2 / -1;
+  grid-row: 1;
+  width: auto;
+  height: 27px;
+  margin: 0;
+  font: 700 12px/1 var(--retro-mono);
+}
+body.ankiretro .send-arrow {display: none}
+body.ankiretro .send-label {display: inline}
+body.ankiretro .picker {
+  bottom: calc(100% + 3px);
+  left: 3px;
+  width: min(305px, calc(100vw - 20px));
+}
+body.ankiretro :is(.picker, .reaction-picker, .member-menu, .modal, .modal.wide) {
+  border: 1px solid var(--retro-edge);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+}
+body.ankiretro :is(.modal-head, .reaction-dialog .modal-head) {
+  padding: 8px 12px;
+  background: var(--retro-title);
+  border-bottom: 1px solid var(--retro-edge);
+  color: #fff;
+}
+body.ankiretro :is(.modal-head, .reaction-dialog .modal-head) h2 {font: 700 14px/1.35 var(--retro-mono)}
+body.ankiretro .reaction-dialog .modal-body {padding-top: 12px}
+body.ankiretro .modal-foot {background: var(--retro-chrome)}
+body.ankiretro .group-member {min-width: 0}
+body.ankiretro :is(.btn, .inbox-row, .field input, .field select, .field textarea) {border-radius: 2px}
+body.ankiretro :is(.auth-content, .inbox-page) {overflow: auto}
+body.ankiretro :is(.empty, .loading) {background: var(--bg)}
+body.ankiretro .welcome {background: var(--retro-chrome)}
+
+@media (max-width: 900px) {
+  body.ankiretro .layout {grid-template-columns: 207px minmax(0, 1fr)}
+}
+@media (max-width: 700px) {
+  body.ankiretro .layout {grid-template-columns: minmax(0, 1fr); padding: 3px}
+  body.ankiretro .layout.inbox-open > .sidebar {padding: 4px}
+  body.ankiretro .chat-head {padding-inline: 6px; gap: 5px}
+  body.ankiretro .chat-actions {gap: 4px}
+  body.ankiretro .chat-actions .btn {padding-inline: 6px; font-size: 11px}
+  body.ankiretro .chat-actions .retro-icon {display: none}
+  body.ankiretro .messages {padding-inline: 12px}
+}
